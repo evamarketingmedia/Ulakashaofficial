@@ -65,7 +65,7 @@ T.it.resAsideLbl1="Concept Store";T.en.resAsideLbl1="Concept Store";
 T.it.evDate="Mar - Sab 13 - 18<br>Dom &amp; Lun chiuso";T.en.evDate="Tue - Sat 1-6 pm<br>Sun &amp; Mon closed";
 T.it.evTildaIntro="La collezione non è ancora disponibile online.<br>Una selezione è già disponibile nel concept store.<br>Accedi in anteprima: lascia i tuoi contatti per ricevere aggiornamenti esclusivi e riservare i capi.";
 T.en.evTildaIntro="The collection is not yet available online.<br>A selection is already available in the concept store.<br>Get early access: leave your contact details to receive exclusive updates and reserve pieces.";
-T.it.evTildaCta="Prenota / Newsletter";T.en.evTildaCta="Book / Newsletter";
+T.it.evTildaCta="Newsletter";T.en.evTildaCta="Newsletter";
 T.it.resAsideP1="Via Festa del Perdono 10, Milano<br>21–26 Aprile · ore 10–22<br>Ingresso libero";T.en.resAsideP1="Via Festa del Perdono 10, Milan<br>21–26 April · 10am–10pm<br>Free entry";
 T.it.resAsideLbl2="Consegna";T.en.resAsideLbl2="Delivery";
 T.it.resAsideP2="Ogni capo realizzato su ordinazione.<br>Tempi di produzione: 4–6 settimane.";T.en.resAsideP2="Each piece is made to order.<br>Production time: 4–6 weeks.";
@@ -82,8 +82,8 @@ T.it.lsV3="L'amore che prende forma nasce dalle mani di chi porta con sé una st
 T.it.shopCopy="Una selezione editoriale per scoprire l universo Ulakasha: arte indossabile, capi su ordinazione, ceramiche, cristalli e oggetti Casa & Lifestyle. La parte prodotti verrà completata con foto, descrizioni e prezzi.";
 T.en.shopCopy="An editorial selection to discover the Ulakasha universe: wearable art, made-to-order garments, ceramics, crystals and Home & Living objects. Product photos, descriptions and prices will be completed later.";
 T.it.shopMeta="";T.en.shopMeta="";
-T.it.sfShop="Collezione";T.en.sfShop="Collection";
-T.it.sfVisit="Prenota";T.en.sfVisit="Book visit";
+T.it.sfShop="Shop";T.en.sfShop="Shop";
+T.it.sfVisit="Newsletter";T.en.sfVisit="Newsletter";
 var lang="it",cart=[],curProd=null,selSz=null,productsLoaded=false,currentFilter="all";
 var eventLoaded=false,eventData=null;
 function el(id){return document.getElementById(id);}
