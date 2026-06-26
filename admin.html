@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin prodotti | Ulakasha</title>
+  <link rel="stylesheet" href="style.css?v=32">
+</head>
+<body class="admin-page admin-locked">
+  <main class="admin-shell">
+    <section class="admin-head">
+      <a href="index.html" class="admin-logo" aria-label="Torna al sito Ulakasha">ūlakasha</a>
+      <div>
+        <span class="admin-kicker">Supabase Admin</span>
+        <h1>Prodotti</h1>
+        <p>Crea e modifica prodotti, immagini, descrizioni e categorie del sito. <a class="admin-inline-link" href="import-admin.html">Importa prodotti in blocco</a></p>
+      </div>
+    </section>
+
+    <section class="admin-card" id="admin-login-panel">
+      <h2>Accesso</h2>
+      <form id="admin-login-form" class="admin-form">
+        <label>Email
+          <input id="admin-email" type="email" autocomplete="email" required>
+        </label>
+        <label>Password
+          <input id="admin-password" type="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit">Entra</button>
+        <p class="admin-status" id="admin-login-status"></p>
+      </form>
+    </section>
+
+    <section class="admin-grid" id="admin-panel" hidden style="display:none">
+      <aside class="admin-card">
+        <div class="admin-card-top">
+          <h2>Lista prodotti</h2>
+          <button type="button" id="admin-new-product">Nuovo</button>
+        </div>
+        <div class="admin-product-list" id="admin-product-list"></div>
+        <button type="button" class="admin-ghost" id="admin-logout">Esci</button>
+      </aside>
+
+      <section class="admin-card">
+        <h2 id="admin-form-title">Nuovo prodotto</h2>
+        <form id="admin-product-form" class="admin-form admin-product-form">
+          <input type="hidden" id="product-id">
+          <div class="admin-two">
+            <label>Slug
+              <input id="product-slug" type="text" placeholder="abito-seta-volto">
+            </label>
+            <label>Ordine
+              <input id="product-sort" type="number" value="100">
+            </label>
+          </div>
+          <div class="admin-two">
+            <label>Categoria
+              <select id="product-category">
+                <optgroup label="Abitare il corpo">
+                  <option value="abbigliamento">Abbigliamento</option>
+                  <option value="accessorio-tessile">Accessorio tessile</option>
+                  <option value="bijoux">Bijoux</option>
+                </optgroup>
+                <optgroup label="Abitare la casa">
+                  <option value="tessile">Tessile</option>
+                  <option value="tavola">Tavola</option>
+                  <option value="bottiglia">Tavola · Bottiglie</option>
+                  <option value="tazze">Tavola · Tazze</option>
+                </optgroup>
+                <optgroup label="Abitare l'arte">
+                  <option value="arte">Arte</option>
+                </optgroup>
+              </select>
+            </label>
+            <label class="admin-check"><input id="product-active" type="checkbox" checked> Visibile sul sito</label>
+            <label class="admin-check"><input id="product-for-sale" type="checkbox" checked> In vendita nello shop</label>
+            <label class="admin-check"><input id="product-hide-price" type="checkbox"> Nascondi prezzo sul sito</label>
+          </div>
+          <label>Layout scheda prodotto
+            <select id="product-layout">
+              <option value="">Automatico</option>
+              <option value="standard">Foto grande, testo a destra</option>
+              <option value="text-below">Descrizioni lunghe sotto la foto</option>
+            </select>
+          </label>
+          <section class="admin-dynamic-card">
+            <div class="admin-dynamic-head">
+              <span class="admin-kicker">Campi categoria</span>
+              <h3 id="dynamic-title">Abbigliamento</h3>
+              <button type="button" class="admin-ghost admin-translate-btn" id="admin-translate-en">Genera traduzioni EN</button>
+            </div>
+            <div id="dynamic-fields" class="admin-dynamic-fields"></div>
+          </section>
+          <div class="admin-three">
+            <label>Prezzo
+              <input id="product-price" type="number" step="0.01" value="0">
+            </label>
+            <label>Taglie
+              <input id="product-sizes" type="text" placeholder="XS, S, M, L">
+            </label>
+            <label>Badge
+              <input id="product-badge" type="text" placeholder="Limited">
+            </label>
+          </div>
+          <label>Link checkout / Shopify / Stripe
+            <input id="product-stripe" type="url">
+          </label>
+          <section class="admin-image-helper">
+            <span class="admin-kicker">Immagini da Supabase Storage</span>
+            <p>Se hai gia caricato le foto nel bucket <strong>product-images</strong>, inserisci qui i nomi file o i percorsi e genera gli URL pubblici.</p>
+            <label>Nomi file o percorsi Storage
+              <textarea id="product-storage-paths" rows="3" placeholder="accessorio tessile/Ulakasha_Acc_001.jpg&#10;accessorio tessile/Ulakasha_Acc_002.jpg"></textarea>
+            </label>
+            <button type="button" class="admin-ghost" id="admin-generate-urls">Genera URL immagini</button>
+          </section>
+          <label>URL immagini
+            <textarea id="product-images" rows="3" placeholder="Un URL per riga"></textarea>
+          </label>
+          <div class="admin-actions">
+            <button type="submit">Salva prodotto</button>
+            <button type="button" class="admin-danger" id="admin-delete-product">Elimina</button>
+          </div>
+          <p class="admin-status" id="admin-product-status"></p>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script src="supabase-config.js?v=2"></script>
+  <script src="admin.js?v=28"></script>
+</body>
+</html>
